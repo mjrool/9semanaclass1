@@ -52,7 +52,7 @@ $('#select').on('change', function() {
 	});
 
 	$.ajax({
-		url: proxy + url + apiKey + '/' + coords[$(this).val()].lat + ',' + coords[$(this).val()].lng + '?' + queryParams[0] + '&' + queryParams[1] + '&' + queryParams[2],
+		url: 'https://api.darksky.net/forecast/44dd20479bd9ec40ea7d34b7979177f1/37.8267,-122.4233/-33.4488897,-70.6692655' [$(this).val()].lat + ',' + coords[$(this).val()].lng + '?' + queryParams[0] + '&' + queryParams[1] + '&' + queryParams[2],
 		method: 'GET',
 		xhrFields: {cors: false}
 	}).then(function(data) {
