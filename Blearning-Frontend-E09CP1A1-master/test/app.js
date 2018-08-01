@@ -40,7 +40,7 @@ function initMap() {
 
 var proxy = 'https://crossorigin.me/'
 var url = 'https://api.darksky.net/forecast/';
-var apiKey = 'e193913a8a2bab291b8999fae03fc8b7';
+var apiKey = '44dd20479bd9ec40ea7d34b7979177f1';
 var queryParams = ['exclude=[minutely,flags]', 'lang=es', 'units=auto'];
 
 $('#select').on('change', function() {
@@ -52,9 +52,9 @@ $('#select').on('change', function() {
 	});
 
 	$.ajax({
-		url: 'https://api.darksky.net/forecast/44dd20479bd9ec40ea7d34b7979177f1/37.8267,-122.4233/-33.4488897,-70.6692655' [$(this).val()].lat + ',' + coords[$(this).val()].lng + '?' + queryParams[0] + '&' + queryParams[1] + '&' + queryParams[2],
+		url: 'https://api.darksky.net/forecast/44dd20479bd9ec40ea7d34b7979177f1/'+ coords[$(this).val()].lat + ',' + coords[$(this).val()].lng + '?' + queryParams[0] + '&' + queryParams[1] + '&' + queryParams[2],
 		method: 'GET',
-		xhrFields: {cors: false}
+		dataType: 'jsonp',
 	}).then(function(data) {
 		console.log(data);
 		$('#resumen').text(parseInt(data.currently.temperature) + '° ' + data.currently.summary);
